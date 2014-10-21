@@ -1,0 +1,21 @@
+<h1>Listing incucais</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @incucais.each do |incucai| %>
+  <tr>
+    <td><%= link_to 'Show', incucai %></td>
+    <td><%= link_to 'Edit', edit_incucai_path(incucai) %></td>
+    <td><%= link_to 'Destroy', incucai, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Incucai', new_incucai_path %>

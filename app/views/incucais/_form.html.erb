@@ -1,0 +1,17 @@
+<%= form_for(@incucai) do |f| %>
+  <% if @incucai.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@incucai.errors.count, "error") %> prohibited this incucai from being saved:</h2>
+
+      <ul>
+      <% @incucai.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

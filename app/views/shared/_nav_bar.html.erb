@@ -1,0 +1,32 @@
+<nav class="top-bar">
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to "Incluir Salud", "#" %></a></h1>
+    </li>
+  </ul>
+  <section class="top-bar-section">
+    <ul class="right">
+      <li class="has-dropdown">
+        <%= link_to "Afiliados", afiliados_path %>
+        <ul class="dropdown">
+          <li><%= link_to "Listado", afiliados_path %></li>
+          <li><%= link_to "Importar", importar_afiliados_path %></li>
+
+        </ul>
+      </li>      
+      <li class="divider"></li>
+      <li><%= link_to "Incucai", incucais_path %></li>
+      <li class="divider"></li>
+      <li class="has-dropdown">
+        <%= link_to "Proveedores", proveedores_path %>
+        <ul class="dropdown">
+          <li><%= link_to "Listado", proveedores_path %></li>
+          <li><%= link_to "Nuevo Proveedor", new_proveedor_path %></li>
+
+        </ul>
+      </li>      
+      
+      
+    </ul>
+  </div>
+</nav>
