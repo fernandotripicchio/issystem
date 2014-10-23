@@ -2,7 +2,7 @@ class AfiliadosController < ApplicationController
   # GET /afiliados
   # GET /afiliados.json
   def index
-    @afiliados = Afiliado.all
+    @afiliados = Afiliado.order("apellido_nombre").page(params[:page]).per(15)
 
     respond_to do |format|
       format.html # index.html.erb

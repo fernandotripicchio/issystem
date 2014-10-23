@@ -12,6 +12,8 @@ gem 'devise_invitable'
 gem 'date_validator'
 gem 'gritter', '~> 1.1.0'
 gem 'roo'
+gem 'kaminari'
+
 group :assets do
   gem 'uglifier',     '>= 1.0.3'
   gem 'compass-rails'  
