@@ -25,12 +25,15 @@
   	<%= gflash %>
     <div class="marketing off-canvas-wrap" data-offcanvas="">
       <meta name="description" content="Programa Federal Incluir Salud">
-      <div class="row">
-        <%= render :partial => "shared/nav_bar"%>
-      </div>
-      <div class="row">        	
-        <%= yield %>
-      </div> 
+
+       <%= render :partial => "shared/nav_bar"%>
+        
+      <section class="main">
+      	<div class="row large-10">
+      	  <%= yield %>		
+      	</div>        
+      </section>
+
       <div>
         <%= javascript_include_tag "application" %>
         </div>

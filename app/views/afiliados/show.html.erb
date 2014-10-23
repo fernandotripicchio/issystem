@@ -1,6 +1,10 @@
-<div class="container">
-	<h3 class="subheader">Afiliado: <%= @afiliado.apellido_nombre %></h3>
+<div class="html">
 	<hr />
+	<h4 class="subheader">Afiliado: <%= @afiliado.apellido_nombre %></h3>
+	<hr />
+	
+<p class="panel">
+	
 	
 	<div class="row">
 		<div class="column large-3">
@@ -28,17 +32,69 @@
 	
 	<div class="row">
 		<div class="column large-3">
-			<%= label_column("Domicilio") %>
+			<%= label_column("Domicilio:") %>
 		</div>		
 		<div class="column large-9">
-			<%= @afiliado.numero_afiliado %>
+			<%= @afiliado.domicilio_calle %>
 		</div>
 	</div>
+
+	<div class="row">
+		<div class="column large-3">
+			<%= label_column("Nro:") %>
+		</div>		
+		<div class="column large-1">
+			<%= @afiliado.domicilio_nro %>
+		</div>
+		<div class="column large-2">
+			<%= label_column("Piso:") %>
+		</div>		
+		<div class="column large-1">
+			<%= @afiliado.domicilio_piso %>
+		</div>
+		<div class="column large-2">
+			<%= label_column("Depto:") %>
+		</div>		
+		<div class="column large-1">
+			<%= @afiliado.domicilio_depto %>
+		</div>
+	</div>	
+	<div class="row">
+		<div class="column large-3">
+			<%= label_column("Departamento:") %>
+		</div>		
+		<div class="column large-4">
+			<%= @afiliado.codigo_departamento %>
+		</div>
+		<div class="column large-3">
+			<%= label_column("Localidad:") %>
+		</div>		
+		<div class="column large-2">
+			<%= @afiliado.codigo_localidad %>
+		</div>
+	</div>	
 	
+
+	<div class="row">
+		<div class="column large-3">
+			<%= label_column("Fecha Alta:") %>
+		</div>		
+		<div class="column large-4">
+			<%= @afiliado.fecha_alta %>
+		</div>
+		<div class="column large-3">
+			<%= label_column("Discapacidad:") %>
+		</div>		
+		<div class="column large-2">
+			<%= @afiliado.incapacidad %>
+		</div>
+	</div>	
 	
+
+	</p>
 	<hr />
 	<div class="row">
 		<%= link_to 'Editar', edit_afiliado_path(@afiliado), :class => "button small" %> |
-		<%= link_to 'voler', afiliados_path, :class => "button small" %>
+		<%= link_to 'Volver', afiliados_path, :class => "button small" %>
 	</div>	
 </div>
