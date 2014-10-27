@@ -80,4 +80,17 @@ class AfiliadosController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def search
+
+    @search = Afiliado.search do
+      fulltext params[:search][:keyword]
+      #paginate(page: params[:page], per_page: 10)
+    end
+    #@afiliados = @search.results
+    @keyword = params[:search][:keyword]
+    @afiliados = Afiliado.where(id: @search.results.map(&:id)).page(params[:page]).per(10)    
+    render :action => "index"
+  end
+
 end

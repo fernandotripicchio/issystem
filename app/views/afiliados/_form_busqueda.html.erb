@@ -1,0 +1,10 @@
+<%= simple_form_for :search,  url: search_afiliados_path , :method => :get do |f| %>
+    <%= f.input :keyword, 
+                :as => :string,
+                :required => false, 
+                :input_html => {:value => @keyword},
+                :wrapper_html => { class: 'row large-3'},
+                :label => false,
+                :autofocus => true %>
+    <%= f.submit "Search", :class => "button left" %>
+<% end %>

@@ -1,9 +1,9 @@
-<div class="html">
-	<hr />
-	<h4 class="subheader">Afiliado: <%= @afiliado.apellido_nombre %></h3>
-	<hr />
-	
-<p class="panel">
+<hr />
+<div class="row">
+  <h3 class="header">Afiliado: <%= @afiliado.apellido_nombre %></h3>	
+</div>
+
+<div class="panel">
 	
 	
 	<div class="row">
@@ -91,10 +91,10 @@
 	</div>	
 	
 
-	</p>
+	</div>
 	<hr />
 	<div class="row">
 		<%= link_to 'Editar', edit_afiliado_path(@afiliado), :class => "button small" %> |
 		<%= link_to 'Volver', afiliados_path, :class => "button small" %>
 	</div>	
-</div>
+

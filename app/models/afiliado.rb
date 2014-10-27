@@ -82,4 +82,11 @@ class Afiliado < ActiveRecord::Base
                       
        result_afiliados      
   end    
+  
+  searchable do
+    text :apellido_nombre, :clave_numero, :numero_documento
+    string  :sort_title do
+      apellido_nombre.downcase.gsub(/^(an?|the)/, '')
+    end
+  end  
 end

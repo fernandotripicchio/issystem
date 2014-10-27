@@ -3,6 +3,7 @@ Farmacia::Application.routes.draw do
     collection do
       get 'importar'
       post 'parsear'
+      get 'search'
     end
   end
   

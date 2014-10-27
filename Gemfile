@@ -13,6 +13,8 @@ gem 'date_validator'
 gem 'gritter', '~> 1.1.0'
 gem 'roo'
 gem 'kaminari'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 
 group :assets do
   gem 'uglifier',     '>= 1.0.3'
