@@ -1,10 +1,13 @@
 <%= simple_form_for :search,  url: search_afiliados_path , :method => :get do |f| %>
     <%= f.input :keyword, 
-                :as => :string,
+                :as => :search,
+                :placeholder => "Buscar",
                 :required => false, 
+                :div => false,
+                :wrapper => false,
                 :input_html => {:value => @keyword},
-                :wrapper_html => { class: 'row large-3'},
                 :label => false,
                 :autofocus => true %>
-    <%= f.submit "Search", :class => "button left" %>
+ 	<%= f.submit "Buscar", :class => "tiny button" %>
+ 	<%= f.input :checkbox, :as=> :boolean, :wrapper => 'inline_checkbox' %>
 <% end %>
