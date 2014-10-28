@@ -1,20 +1,6 @@
 <h1 class="subheader">Proveedores</h1>
+<hr />
+<%= render :partial => "index"%>
 
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Nombre</th>
-    <th>Cuit</th>
-  </tr>
-
-<% @proveedores.each do |proveedor| %>
-  <tr>
-    <td><%= link_to 'Ver', proveedor %></td>
-    <td><%= link_to 'Editar', edit_proveedor_path(proveedor) %></td>
-    <td><%= link_to 'Eliminar', proveedor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-<br />
 
 

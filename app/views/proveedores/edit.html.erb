@@ -1,6 +1,11 @@
-<h1>Editing proveedor</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @proveedor %> |
-<%= link_to 'Back', proveedores_path %>
+<h3 class="subheader">Proveedor</h3>
+<hr />
+<%= simple_form_for @proveedor do |f| %>
+<%= render :partial => 'form', :locals => { :f => f} %>
+<div class="row">
+	<div class="text-center">
+      <%= link_to 'Cancelar', proveedores_path, :class => "small button" %>		
+      <%= f.button :submit, "Guardar", :class => "small button" %>		
+	</div>
+</div>
+<% end %>
