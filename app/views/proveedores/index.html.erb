@@ -1,6 +1,20 @@
-<h1 class="subheader">Proveedores</h1>
+<h3 class="subheader">Proveedores</h3>
 <hr />
-<%= render :partial => "index"%>
+<div class="row">
+  <%= render :partial => "form_busqueda"%>	
+</div>
+
+<div class="row text-left">
+  <%= page_entries_info @proveedores %>	
+</div>
+
+<div class="row" id="proveedoresList">
+  <%= render :partial => "index", :locals => { :proveedores => @proveedores }%>
+</div>
+
+<div class="row">
+  <%= paginate @proveedores %>
+</div>
 
 
 

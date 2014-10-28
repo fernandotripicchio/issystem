@@ -23,7 +23,7 @@ class Afiliado < ActiveRecord::Base
       end
   end  
   
-  def self.import(file)
+  def self.import(file, estado = true)
       spreadsheet = open_spreadsheet(file)
       header = spreadsheet.row(1)
       
@@ -82,6 +82,10 @@ class Afiliado < ActiveRecord::Base
                       
        result_afiliados      
   end    
+  
+  def estado
+    self.activo ? "Activo" : "Baja"
+  end
   
   searchable do
     text :apellido_nombre, :clave_numero, :numero_documento

@@ -8,7 +8,11 @@ Farmacia::Application.routes.draw do
   end
   
   resources :incucais 
-  resources :proveedores
+  resources :proveedores do
+    collection do
+      get 'search'
+    end
+  end
   resources :incucais
 
   root to: "afiliados#index"

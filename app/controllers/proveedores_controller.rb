@@ -2,7 +2,7 @@ class ProveedoresController < ApplicationController
   # GET /proveedores
   # GET /proveedores.json
   def index
-    @proveedores = Proveedor.all
+    @proveedores = Proveedor.order("razon_social").page(params[:page]).per(15)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +79,17 @@ class ProveedoresController < ApplicationController
       format.html { redirect_to proveedores_url }
       format.json { head :no_content }
     end
+  end
+  
+  def search
+
+    @search = Proveedor.search do
+      fulltext params[:search][:keyword]
+      #paginate(page: params[:page], per_page: 10)
+    end
+    #@afiliados = @search.results
+    @keyword = params[:search][:keyword]
+    @proveedores = Proveedor.where(id: @search.results.map(&:id)).page(params[:page]).per(10)    
+    render :action => "index"
   end
 end

@@ -1,21 +1,25 @@
 <table class="large-12" role="grid">
 	<thead>
 		  <tr>
-		  	<th>Número Afiliado</th>
+		  	<th>Estado            </th>
+		  	<th>Número Afiliado   </th>
 		  	<th>Apellido y Nombre </th>
-		  	<th>Tipo	      </th>
+		  	<th>Tipo	          </th>
 		  	<th>Documento	      </th>
-		    <th>&nbsp;</th>
+		    <th>&nbsp;            </th>
 		  </tr>
     </thead>
     <tbody>
     <% afiliados.each do |afiliado| %>
 		  <tr>
-		  	<td><%= afiliado.numero_afiliado %>        </td>
-		  	<td><%= afiliado.apellido_nombre %>        </td>
-		  	<td><%= afiliado.tipo_documento %>         </td>
-		  	<td><%= afiliado.numero_documento %>       </td>
-		    <td><%= link_to 'Ver', afiliado, {:class => "button small" } %>     </td>
+		  	<td>
+		  		<%= estado_afiliado( afiliado ) %>
+		  	</td>
+		  	<td><%= afiliado.numero_afiliado %>   </td>
+		  	<td><%= afiliado.apellido_nombre %>   </td>
+		  	<td><%= afiliado.tipo_documento %>    </td>
+		  	<td><%= afiliado.numero_documento %>  </td>
+		    <td><%= link_to 'Ver', afiliado, {:class => "button small" } %>  </td>
 		  </tr>
     <% end %>
    </tbody>
