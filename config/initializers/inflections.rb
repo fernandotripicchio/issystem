@@ -7,7 +7,12 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'proveedor', 'proveedores'
   inflect.irregular 'provincia', 'provincias'
   inflect.irregular 'localidad', 'localidades'
-  inflect.irregular 'departamentos', 'departamentos'  
+  inflect.irregular 'departamento', 'departamentos'  
+  inflect.irregular 'orden', 'ordenes'
+  inflect.irregular 'laboratorio', 'laboratorios'
+  inflect.irregular 'remito', 'remitos'
+  inflect.irregular 'medicamento', 'medicamentos'
+  inflect.irregular 'diagnostico', 'diagnosticos'
 end
 #
 # These inflection rules are supported but not enabled by default:

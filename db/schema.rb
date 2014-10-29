@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141023155537) do
+ActiveRecord::Schema.define(:version => 20141029121834) do
 
   create_table "afiliados", :force => true do |t|
     t.string   "apellido_nombre"
@@ -56,6 +56,12 @@ ActiveRecord::Schema.define(:version => 20141023155537) do
     t.datetime "updated_at",   :null => false
   end
 
+  create_table "diagnosticos", :force => true do |t|
+    t.string   "nombre"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "incucais", :force => true do |t|
     t.integer  "afiliado_id",       :null => false
     t.integer  "centro_id",         :null => false
@@ -73,6 +79,23 @@ ActiveRecord::Schema.define(:version => 20141023155537) do
     t.integer  "localidad",    :null => false
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "medicos", :force => true do |t|
+    t.string   "nombre",     :null => false
+    t.string   "matricula",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "ordenes", :force => true do |t|
+    t.boolean  "estado",         :default => true
+    t.date     "fecha"
+    t.integer  "afiliado_id",                      :null => false
+    t.integer  "medico_id",                        :null => false
+    t.integer  "diagnostico_id",                   :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   create_table "proveedores", :force => true do |t|
