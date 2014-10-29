@@ -14,6 +14,8 @@ Farmacia::Application.routes.draw do
     end
   end
   resources :incucais
+  resources :medicamentos
+  resources :ordenes
 
   root to: "afiliados#index"
   match 'importar_afiliados' => 'importar_afiliados#importar', :as => :importar_afiliados
