@@ -1,5 +1,13 @@
-<h1>New orden</h1>
+<h3 class="subheader">Nueva Orden</h3>
+<hr>
+<%= simple_form_for @orden do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<div class="row">
+	<div class="text-center">
+      <%= link_to 'Cancelar', ordenes_path, :class => "small button" %>		
+      <%= f.button :submit, :class => "small button" %>		
+	</div>
+</div>
+<% end %>
 
-<%= render 'form' %>
 
-<%= link_to 'Back', ordenes_path %>

@@ -1,0 +1,22 @@
+<table class="large-12" role="grid">
+	<thead>
+		  <tr>
+		  	<th> Nro        </th>
+		  	<th> Fecha  </th>
+		  	<th> Afiliado </th>
+		    <th>&nbsp;            </th>
+		  </tr>
+    </thead>
+    <tbody>
+    <% ordenes.each do | orden | %>
+		  <tr>
+		  	<td>
+		  		<%= orden.id %>
+		  	</td>
+		  	<td><%= orden.fecha %>   </td>
+		  	<td><%= orden.afiliado_nombre %>   </td>
+		    <td><%= link_to 'Ver', afiliado, {:class => "button small" } %>  </td>
+		  </tr>
+    <% end %>
+   </tbody>
+</table>

@@ -2,7 +2,7 @@ class OrdenesController < ApplicationController
   # GET /ordenes
   # GET /ordenes.json
   def index
-    @ordenes = Orden.all
+    @ordenes = Orden.order("id").page(params[:page]).per(15)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +80,15 @@ class OrdenesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def search
+    @search = Orden.search do
+      fulltext params[:search][:keyword]
+      #paginate(page: params[:page], per_page: 10)
+    end
+    #@afiliados = @search.results
+    @keyword = params[:search][:keyword]
+    @ordenes = Orden.where(id: @search.results.map(&:id)).page(params[:page]).per(10)    
+    render :action => "index"
+  end  
 end

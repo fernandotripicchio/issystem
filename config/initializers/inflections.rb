@@ -13,6 +13,8 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'remito', 'remitos'
   inflect.irregular 'medicamento', 'medicamentos'
   inflect.irregular 'diagnostico', 'diagnosticos'
+  inflect.irregular 'prestacion', 'prestaciones'
+  inflect.irregular 'registro_prestacion', 'registro_prestaciones'
 end
 #
 # These inflection rules are supported but not enabled by default:

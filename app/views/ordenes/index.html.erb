@@ -1,21 +1,19 @@
-<h1>Listing ordenes</h1>
+<h3 class="subheader">Ordenes Medicamentos</h3>
+<hr />
+<%= link_to "Nueva Orden", new_orden_path, :class => "green radius button"%>
+<div class="row">
+  <%= render :partial => "form_busqueda" %>	
+</div>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="row text-left">
+  <%= page_entries_info @ordenes %>	
+</div>
 
-<% @ordenes.each do |orden| %>
-  <tr>
-    <td><%= link_to 'Show', orden %></td>
-    <td><%= link_to 'Edit', edit_orden_path(orden) %></td>
-    <td><%= link_to 'Destroy', orden, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div class="row" id="ordenesList">
+  <%= render :partial => "index", :locals => { :ordenes => @ordenes } %>
+</div>
 
-<br />
+<div class="row">
+  <%= paginate @ordenes %>
+</div>
 
-<%= link_to 'New Orden', new_orden_path %>

@@ -1,0 +1,19 @@
+<%= simple_form_for :search,  url: search_ordenes_path , :method => :get do |f| %>
+<div class="row">
+	<div class="column large-4">
+    <%= f.input :keyword, 
+                :as => :search,
+                :placeholder => "Buscar",
+                :required => false, 
+                :div => false,
+                :wrapper => false,
+                :input_html => {:value => @keyword},
+                :label => false,
+                :autofocus => true %>
+	</div>
+	<div class="column large-8">
+	<%= f.submit "Buscar", :class => "tiny button left" %>	
+	</div>
+</div>
+ 	
+<% end %>

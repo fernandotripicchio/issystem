@@ -1,4 +1,7 @@
 Farmacia::Application.routes.draw do
+  resources :prestaciones
+
+
   resources :afiliados do
     collection do
       get 'importar'
@@ -15,7 +18,11 @@ Farmacia::Application.routes.draw do
   end
   resources :incucais
   resources :medicamentos
-  resources :ordenes
+  resources :ordenes do
+    collection do
+      get 'search'
+    end
+  end
 
   root to: "afiliados#index"
   match 'importar_afiliados' => 'importar_afiliados#importar', :as => :importar_afiliados

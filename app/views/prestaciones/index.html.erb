@@ -1,0 +1,21 @@
+<h1>Listing prestaciones</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @prestaciones.each do |prestacion| %>
+  <tr>
+    <td><%= link_to 'Show', prestacion %></td>
+    <td><%= link_to 'Edit', edit_prestacion_path(prestacion) %></td>
+    <td><%= link_to 'Destroy', prestacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Prestacion', new_prestacion_path %>
