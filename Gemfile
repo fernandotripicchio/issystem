@@ -15,7 +15,12 @@ gem 'roo'
 gem 'kaminari'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
+gem "nested_form"
+gem "foundation-datetimepicker-rails"
 
+group :development do
+  gem 'sextant'
+end
 group :assets do
   gem 'uglifier',     '>= 1.0.3'
   gem 'compass-rails'  
