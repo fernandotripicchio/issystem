@@ -15,3 +15,14 @@ en:
           other: "Mostrando <b>Todos %{count}</b> %{entry_name}"
       more_pages:
         display_entries: "Mostrando %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> de <b>%{total}</b> en total"
+  errors:
+    format: "%{message}"
+    attributes:
+      email:
+        blank: "El email no puede estar en blanco"
+      razon_social:
+        blank: "La razon social no puede estar en blanco"
+      cuit:
+        blank: "El cuit no puede estar en blanco"
+      direccion:
+        blank: "La direccion no puede estar en blanco"              
