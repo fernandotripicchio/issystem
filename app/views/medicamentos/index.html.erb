@@ -1,21 +1,17 @@
-<h1>Listing medicamentos</h1>
+<h3 class="subheader">Medicamentos </h3>
+<hr />
+<div class="row">
+  <%= render :partial => "form_busqueda"%>	
+</div>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="row text-left">
+  <%= page_entries_info @medicamentos %>	
+</div>
 
-<% @medicamentos.each do |medicamento| %>
-  <tr>
-    <td><%= link_to 'Show', medicamento %></td>
-    <td><%= link_to 'Edit', edit_medicamento_path(medicamento) %></td>
-    <td><%= link_to 'Destroy', medicamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div class="row" id="medicamentosList">
+  <%= render :partial => "index", :locals => { :medicamentos => @medicamentos }%>
+</div>
 
-<br />
-
-<%= link_to 'New Medicamento', new_medicamento_path %>
+<div class="row">
+  <%= paginate @medicamentos %>
+</div>

@@ -1,0 +1,18 @@
+<table class="large-12" role="grid">
+	<thead>
+		  <tr>
+		  	<th>Nombre  </th>
+		  	<th>Lote  </th>
+		  	<th>Vencimiento</th>
+		  </tr>
+    </thead>
+    <tbody>
+    <% medicamentos.each do | medicamento | %>
+		  <tr>
+		  	<td><%= medicamento.nombre %> </td>
+		  	<td><%= medicamento.nombre %> </td>
+	        <td><%= link_to 'Ver', medicamento, {:class => "button small" } %>  </td>
+		  </tr>
+    <% end %>
+   </tbody>
+</table>

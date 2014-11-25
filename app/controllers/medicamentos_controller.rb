@@ -2,7 +2,7 @@ class MedicamentosController < ApplicationController
   # GET /medicamentos
   # GET /medicamentos.json
   def index
-    @medicamentos = Medicamento.all
+    @medicamentos = Medicamento.page(params[:page]).per(15)
 
     respond_to do |format|
       format.html # index.html.erb
