@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141030155115) do
+ActiveRecord::Schema.define(:version => 20141125161409) do
 
   create_table "afiliados", :force => true do |t|
     t.string   "apellido_nombre"
@@ -70,15 +70,19 @@ ActiveRecord::Schema.define(:version => 20141030155115) do
     t.date     "fecha_baja"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.integer  "kilometros"
+    t.string   "etiologia"
+    t.integer  "edad"
   end
 
   create_table "localidades", :force => true do |t|
-    t.string   "nombre",       :null => false
-    t.integer  "provincia",    :null => false
-    t.integer  "departamento", :null => false
-    t.integer  "localidad",    :null => false
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "provincia",     :null => false
+    t.integer  "departamento",  :null => false
+    t.integer  "localidad",     :null => false
+    t.string   "codigo_postal"
+    t.string   "nombre",        :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "medicamentos", :force => true do |t|
@@ -121,11 +125,8 @@ ActiveRecord::Schema.define(:version => 20141030155115) do
     t.datetime "updated_at",   :null => false
   end
 
-  create_table "provincias", :force => true do |t|
-    t.string   "provincia",  :null => false
-    t.string   "detalle",    :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "provincias", :primary_key => "provincia", :force => true do |t|
+    t.string "detalle", :limit => 19
   end
 
   create_table "registro_items", :force => true do |t|

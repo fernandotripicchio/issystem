@@ -1,0 +1,26 @@
+<table class="large-12" role="grid">
+	<thead>
+		  <tr>
+		  	<th>Codigo            </th>
+		  	<th>Establecimiento  </th>
+		  	<th>Número Afiliado   </th>
+		  	<th>Apellido y Nombre </th>
+		  	<th>Tipo	          </th>
+		  	<th>Documento	      </th>
+		    <th>&nbsp;            </th>
+		  </tr>
+    </thead>
+    <tbody>
+    <% dialisis.each do |dialisi| %>
+		  <tr>
+		  	<td>
+		  	</td>
+		  	<td><%= dialisi.afiliado.numero_afiliado %>   </td>
+		  	<td><%= dialisi.afiliado.apellido_nombre %>   </td>
+		  	<td><%= dialisi.afiliado.tipo_documento %>    </td>
+		  	<td><%= dialisi.afiliado.numero_documento %>  </td>
+		    <td><%= link_to 'Ver', dialisi.afiliado, {:class => "button small" } %>  </td>
+		  </tr>
+    <% end %>
+   </tbody>
+</table>

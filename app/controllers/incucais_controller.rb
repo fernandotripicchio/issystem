@@ -2,7 +2,7 @@ class IncucaisController < ApplicationController
   # GET /incucais
   # GET /incucais.json
   def index
-    @incucais = Incucai.all
+    @dialisis = Incucai.page(params[:page]).per(15)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,21 +1,17 @@
-<h1>Listing incucais</h1>
+<h3 class="subheader">Dialisis </h3>
+<hr />
+<div class="row">
+  <%= render :partial => "form_busqueda"%>	
+</div>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="row text-left">
+  <%= page_entries_info @dialisis %>	
+</div>
 
-<% @incucais.each do |incucai| %>
-  <tr>
-    <td><%= link_to 'Show', incucai %></td>
-    <td><%= link_to 'Edit', edit_incucai_path(incucai) %></td>
-    <td><%= link_to 'Destroy', incucai, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div class="row" id="dialisisList">
+  <%= render :partial => "index", :locals => { :dialisis => @dialisis }%>
+</div>
 
-<br />
-
-<%= link_to 'New Incucai', new_incucai_path %>
+<div class="row">
+  <%= paginate @dialisis %>
+</div>
