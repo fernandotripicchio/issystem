@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141125161409) do
+ActiveRecord::Schema.define(:version => 20141128140109) do
 
   create_table "afiliados", :force => true do |t|
     t.string   "apellido_nombre"
@@ -118,11 +118,12 @@ ActiveRecord::Schema.define(:version => 20141125161409) do
   end
 
   create_table "proveedores", :force => true do |t|
-    t.string   "razon_social", :null => false
-    t.string   "cuit",         :null => false
-    t.string   "direccion",    :null => false
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.string   "razon_social",  :null => false
+    t.string   "cuit",          :null => false
+    t.string   "direccion",     :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.text     "observaciones"
   end
 
   create_table "provincias", :primary_key => "provincia", :force => true do |t|
@@ -144,6 +145,8 @@ ActiveRecord::Schema.define(:version => 20141125161409) do
     t.integer  "proveedor_id",   :null => false
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.text     "observaciones"
+    t.integer  "anio"
   end
 
 end
