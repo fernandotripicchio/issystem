@@ -5,5 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Prestacion.create(nombre: 'Transporte')
-Prestacion.create(nombre: 'Cuidador Domiciliario')
+unless Prestacion.all.blank?
+  Prestacion.create(nombre: 'Transporte')
+  Prestacion.create(nombre: 'Cuidador Domiciliario')
+end
+
+unless Proveedor.all.blank?
+  Proveedor.create(razon_social: "Proveedor 1")
+  Proveedor.create(razon_social: "Proveedor 2")
+end

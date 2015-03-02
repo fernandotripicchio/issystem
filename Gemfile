@@ -17,7 +17,6 @@ gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'nested_form'
 
-
 group :development do
   gem 'sextant'
 end

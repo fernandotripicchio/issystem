@@ -1,0 +1,18 @@
+<table class="large-12" role="grid">
+	<thead>
+		  <tr>
+		  	<th>ID            </th>
+		  	<th>Estado            </th>
+		  	<th>Prestacion        </th>
+		  </tr>
+    </thead>
+    <tbody>
+    <% prestaciones.each do |prestacion| %>
+		  <tr>
+		  	<td><%= prestacion.id %> </td>
+		  	<td><%= prestacion.estado %>   </td>
+		  	<td><%= prestacion.estado %>   </td>
+		  </tr>
+    <% end %>
+   </tbody>
+</table>

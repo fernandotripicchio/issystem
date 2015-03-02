@@ -1,13 +1,13 @@
 Farmacia::Application.routes.draw do
-  resources :prestaciones
-
-
+  devise_for :users
   resources :afiliados do
     collection do
       get 'importar'
       post 'parsear'
       get 'search'
     end
+    resources :registro_prestaciones
+    resources :auditorias
   end
   
   resources :incucais 
@@ -15,7 +15,6 @@ Farmacia::Application.routes.draw do
     collection do
       get 'search'
     end
-    resources :registro_prestaciones
   end
   resources :incucais
   resources :medicamentos

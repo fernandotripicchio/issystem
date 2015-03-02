@@ -2,7 +2,7 @@ class PrestacionesController < ApplicationController
   before_filter :set_prestacion, only: [:show, :edit, :update, :destroy]
 
   def index
-    @prestaciones = Prestacion.all
+    @prestaciones = @afiliado.prestaciones.all
     respond_with(@prestaciones)
   end
 
@@ -35,7 +35,12 @@ class PrestacionesController < ApplicationController
   end
 
   private
-    def set_prestacion
+  def set_prestacion
       @prestacion = Prestacion.find(params[:id])
-    end
+  end
+  
+  def set_afiliado
+    @afiliado = Afiliado.find(params[:afiliado_id])
+  end
+    
 end

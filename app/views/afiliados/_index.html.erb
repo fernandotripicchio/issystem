@@ -7,6 +7,7 @@
 		  	<th>Tipo	          </th>
 		  	<th>Documento	      </th>
 		    <th>&nbsp;            </th>
+		    <th>&nbsp;            </th>
 		  </tr>
     </thead>
     <tbody>
@@ -20,6 +21,8 @@
 		  	<td><%= afiliado.tipo_documento %>    </td>
 		  	<td><%= afiliado.numero_documento %>  </td>
 		    <td><%= link_to 'Ver', afiliado, {:class => "button small" } %>  </td>
+		    <td><%= link_to 'Prestaciones', afiliado_registro_prestaciones_path(afiliado), {:class => "button small" } %>  </td>
+		    <td><%= link_to 'Auditoria', new_afiliado_auditoria_path(afiliado), {:class => "button small" } %>  </td>
 		  </tr>
     <% end %>
    </tbody>

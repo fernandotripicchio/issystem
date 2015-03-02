@@ -5,4 +5,5 @@ class RegistroPrestacion < ActiveRecord::Base
    validates :fecha_factura, :numero_factura, :periodo, :presence => true               
    belongs_to :prestador
    belongs_to :prestacion
+   belongs_to :afiliado
 end

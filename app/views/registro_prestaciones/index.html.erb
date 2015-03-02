@@ -1,0 +1,23 @@
+<h3 class="subheader"><strong> <%= @afiliado.full_name%> - <%= @afiliado.documento%> </strong></h3>
+<%= link_to "Nueva Prestación",  new_afiliado_registro_prestacion_path(@afiliado, format: "js"),class: "button", 'data-reveal-id' => 'complete', remote: true %>
+
+<hr />
+<div class="row">
+  <%= render :partial => "form_busqueda"%>	
+</div>
+
+<div class="row text-left">
+  <%= page_entries_info @prestaciones %>	
+</div>
+
+<div class="row" id="afiliadosList">
+  <%= render partial: "index", :locals => { afiliados: @afiliados }%>
+</div>
+
+<div class="row">
+  <%= paginate @prestaciones %>
+</div>
+
+<div id="new_prestacion" class="reveal-modal" data-reveal>
+asdadasd
+</div>

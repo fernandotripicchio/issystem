@@ -1,0 +1,21 @@
+<%= form_for(@auditoria) do |f| %>
+<!-- Mover a un partial con errores -->
+  <% if @auditoria.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@auditoria.errors.count, "error") %> prohibited this afiliado from being saved:</h2>
+
+      <ul>
+      <% @auditoria.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+  	<legend>Informe Auditoria Médica</legend>
+  	<% render partial: "form", :locals => {auditoria: @auditoria}%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

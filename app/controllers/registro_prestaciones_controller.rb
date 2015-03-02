@@ -1,8 +1,19 @@
 class RegistroPrestacionesController < ApplicationController
+  before_filter :set_afiliado, only: [:show, :edit, :update, :destroy, :new, :create, :index]
+  
+  
+  def index
+    @prestaciones = @afiliado.prestaciones.page(params[:page]).per(15)
+  end
+  
   def new
-    @proveedor = Proveedor.find(params[:proveedor_id])
+    @proveedor = Proveedor.all
     @registro_prestacion = RegistroPrestacion.new
     @prestaciones = Prestacion.all
+    respond_to do|format|
+        format.html
+        format.js
+    end  
   end
   
   def create
@@ -18,4 +29,9 @@ class RegistroPrestacionesController < ApplicationController
       end
     end
   end
+  
+ private
+ def set_afiliado
+    @afiliado = Afiliado.find(params[:afiliado_id])
+ end
 end

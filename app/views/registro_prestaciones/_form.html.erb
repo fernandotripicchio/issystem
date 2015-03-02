@@ -1,3 +1,4 @@
+<%= f.input :proveedor_id, :as => :hidden, :value => @proveedor.id%>
 <%= f.input :numero_factura %>
 <%= f.input :fecha_factura %>
 <%= f.association :prestacion, collection: Prestacion.all(order: 'nombre'), prompt: "Seleccione una prestacion" %>
