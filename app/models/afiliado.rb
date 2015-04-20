@@ -97,6 +97,35 @@ class Afiliado < ActiveRecord::Base
     self.tipo_documento + " " + self.numero_documento
   end
   
+  def dosep_url
+    
+  end
+  
+  def get_dosep_status
+     mechanize = Mechanize.new
+     page = mechanize.get('http://cajasdosep.sanluis.gov.ar/DOSEPLOCAL/afiliados.asp')
+     nombres = self.apellido_nombre.split(" ")
+     form = page.forms.first
+     form['Ape'] = nombres[0]
+     form['Nom'] = nombres[1] + ( (nombres[2].blank?) ? "" : " " + nombres[2] )
+     page = form.submit
+     results = []
+     page.search('center tr td').each do |tr|
+       puts "#{tr}"
+       #results << tr 
+     end
+     results    
+  end
+  
+  def check_dosep
+     results = self.get_dosep_status
+     return results.match(/\bHabilitado\b/).blank? ? false : true
+  end
+  
+  def dosep?
+    self.check_dosep ? "Si" : "No"
+  end
+  
   searchable do
     text :apellido_nombre, :clave_numero, :numero_documento
     string  :sort_title do

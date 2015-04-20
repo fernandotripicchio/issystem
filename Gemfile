@@ -16,6 +16,8 @@ gem 'kaminari'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'nested_form'
+gem 'mechanize'
+gem "test-unit"
 
 group :development do
   gem 'sextant'

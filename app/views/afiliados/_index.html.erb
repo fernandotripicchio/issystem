@@ -6,7 +6,7 @@
 		  	<th>Apellido y Nombre </th>
 		  	<th>Tipo	          </th>
 		  	<th>Documento	      </th>
-		    <th>&nbsp;            </th>
+		    <th>Dosep          </th>
 		    <th>&nbsp;            </th>
 		  </tr>
     </thead>
@@ -20,6 +20,7 @@
 		  	<td><%= afiliado.apellido_nombre %>   </td>
 		  	<td><%= afiliado.tipo_documento %>    </td>
 		  	<td><%= afiliado.numero_documento %>  </td>
+		  	<td><%= render :partial => "dosep", :locals => {:afiliado => afiliado} %>  </td>
 		    <td><%= link_to 'Ver', afiliado, {:class => "button small" } %>  </td>
 		    <td><%= link_to 'Prestaciones', afiliado_registro_prestaciones_path(afiliado), {:class => "button small" } %>  </td>
 		    <td><%= link_to 'Auditoria', new_afiliado_auditoria_path(afiliado), {:class => "button small" } %>  </td>
