@@ -5,9 +5,21 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-unless Prestacion.all.blank?
-  Prestacion.create(nombre: 'Transporte')
-  Prestacion.create(nombre: 'Cuidador Domiciliario')
+if TipoPrestacion.all.blank?
+  TipoPrestacion.create(tipo: 'Medicamentos')
+  TipoPrestacion.create(tipo: 'Odontologia')
+  TipoPrestacion.create(tipo: 'Rehabilitacion')
+  TipoPrestacion.create(tipo: 'Protesis y Ortesis')
+  TipoPrestacion.create(tipo: 'Implantes y Transplantes')
+  TipoPrestacion.create(tipo: 'Atencion Adultos Mayores')
+  TipoPrestacion.create(tipo: 'Salud Mental')
+  TipoPrestacion.create(tipo: 'Optica y Audifonos')
+  TipoPrestacion.create(tipo: 'Transporte')
+  TipoPrestacion.create(tipo: 'Apoyo y Discapacidad')
+  TipoPrestacion.create(tipo: 'Viaticos y Traslados Afiliados')
+  TipoPrestacion.create(tipo: 'Viaticos y Traslados Personal')
+  TipoPrestacion.create(tipo: 'Sueldos y Honorarios No Medico')
+  TipoPrestacion.create(tipo: 'Gastos de Funcionamiento Administrativo')
 end
 
 unless Proveedor.all.blank?

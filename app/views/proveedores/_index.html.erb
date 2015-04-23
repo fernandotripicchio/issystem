@@ -1,22 +1,23 @@
 <table class="large-12" role="grid">
-  <tr>
-    <th>ID</th>
-    <th>Nombre</th>
-    <th>Cuit</th>
-    <th class="large-3">&nbsp;</th>
-  </tr>
-
+  <thead>
+    <tr>
+      <th width="10">ID</th>
+      <th>Nombre</th>
+      <th width="150">CUIT</th>
+      <th width="150">Direccion</th>
+      <th width="150">&nbsp;</th>
+    </tr>
+  </thead>	
 <% @proveedores.each do |proveedor| %>
   <tr>
+  	<td><%= proveedor.id %></td>
   	<td><%= proveedor.razon_social %></td>
   	<td><%= proveedor.cuit %></td>
   	<td><%= proveedor.direccion %></td>
     <td>
     <%= link_to 'Ver', proveedor, :class => "tiny button" %>
     <%= link_to 'Editar', edit_proveedor_path(proveedor), :class => "tiny button" %>
-    <%= link_to 'Eliminar', proveedor, method: :delete, data: { confirm: 'Esta Seguro?' } , :class => "tiny button" %>
-    <%= link_to 'Nuevo Registro ', new_proveedor_registro_prestacion_path(proveedor), :class => "tiny button" %>
-    
+    <%= link_to 'Eliminar', proveedor, method: :delete, data: { confirm: 'Esta Seguro que desea eliminar el proveedor?' } , :class => "tiny button" %>
     </td>
   </tr>
 <% end %>
