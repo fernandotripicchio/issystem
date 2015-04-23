@@ -1,4 +1,5 @@
 class ProveedoresController < ApplicationController
+  before_filter :authenticate_user!
   # GET /proveedores
   # GET /proveedores.json
   def index

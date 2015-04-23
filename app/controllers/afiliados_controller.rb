@@ -1,4 +1,5 @@
 class AfiliadosController < ApplicationController
+   before_filter :authenticate_user!
   # GET /afiliados
   # GET /afiliados.json
   def index

@@ -26,3 +26,13 @@ unless Proveedor.all.blank?
   Proveedor.create(razon_social: "Proveedor 1")
   Proveedor.create(razon_social: "Proveedor 2")
 end
+
+if User.all.count <= 0
+  u = User.create({email: 'fernando.rt@gmail.com', password: 'fernando2015', password_confirmation: 'fernando2015'})
+  u = User.create({email: 'olguingonzalez.auditores@gmail.com', password: 'fabricio2015', password_confirmation: 'fabricio2015'})
+  u = User.create({email: 'marian_pedernera@hotmail.com', password: 'marian2015', password_confirmation: 'marian2015'})
+  u = User.create({email: 'andrescdb@hotmail.com', password: 'andres2015', password_confirmation: 'andres2015'})
+  u = User.create({email: 'elevarce@gmail.com', password: 'laura2015', password_confirmation: 'laura2015'})    
+  
+end
+ 
