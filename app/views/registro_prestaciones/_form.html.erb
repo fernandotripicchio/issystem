@@ -1,6 +1,6 @@
 <%= f.input :proveedor_id, :as => :hidden, :value => @proveedor.id%>
 <%= f.input :numero_factura %>
 <%= f.input :fecha_factura %>
-<%= f.association :prestacion, collection: Prestacion.all(order: 'nombre'), prompt: "Seleccione una prestacion" %>
+<%= f.association :tipo_prestacion, collection: Prestacion.all(order: 'nombre'), prompt: "Seleccione una prestacion" %>
 <%= f.input :periodo, :collection => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Setiembre', 'Octubre', 'Noviembre', 'Diciembre'] %>
 <%= f.input :anio, collection: 2012..2020, :label => "Año" %>

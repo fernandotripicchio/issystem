@@ -6,7 +6,6 @@ Farmacia::Application.routes.draw do
       post 'parsear'
       get 'search'
     end
-    resources :registro_prestaciones
     resources :auditorias
   end
   
@@ -15,6 +14,7 @@ Farmacia::Application.routes.draw do
     collection do
       get 'search'
     end
+    resources :registro_prestaciones
   end
   resources :incucais
   resources :medicamentos

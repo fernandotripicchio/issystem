@@ -3,6 +3,5 @@ class Prestacion < ActiveRecord::Base
   has_many :registro_prestaciones
   belongs_to :tipo_prestacion
   belongs_to :proveedor
-  belongs_to :afiliado
-  
+  belongs_to :afiliado  
 end
