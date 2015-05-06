@@ -2,7 +2,7 @@ development:
  adapter: mysql2 
  encoding: utf8
  reconnect: false
- database: profe_deveploment
+ database: profe_development
  pool: 5
  username: root
  password: 3833105m

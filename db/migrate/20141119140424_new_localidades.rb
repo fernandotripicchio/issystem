@@ -6,6 +6,7 @@ class NewLocalidades < ActiveRecord::Migration
       t.integer :localidad, :null => false
       t.string  :codigo_postal
       t.string  :nombre, :null => false
+      t.string :codigo_postal 
       t.timestamps
     end
   end

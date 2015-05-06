@@ -6,8 +6,6 @@ class Afiliado < ActiveRecord::Base
                    :domicilio_calle, :incapacidad, :domicilio_nro, :domicilio_depto, :domicilio_cp, :domicilio_piso,
                    :codigo_provincia, :codigo_localidad, :codigo_departamento
                    
-  has_many :registro_prestaciones
-  has_many :prestaciones, through: :registro_prestaciones
   def numero_afiliado
     self.clave_excaja.to_s + "-" + self.clave_tipo.to_s + "-" + self.clave_numero.to_s + "-" + self.clave_coparticipe + "-" + self.ley_aplicada
   end 
