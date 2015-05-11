@@ -14,6 +14,7 @@ Farmacia::Application.routes.draw do
     collection do
       get 'search'
     end
+    resources :prestaciones
   end
   resources :incucais
   resources :medicamentos

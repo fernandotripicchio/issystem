@@ -1,5 +1,5 @@
 class PrestacionesController < ApplicationController
-  before_filter :set_prestacion, only: [:show, :edit, :update, :destroy]
+  before_filter :set_prestacion, only: [:show, :edit, :update, :destroy, :create]
 
   def index
     @prestaciones = @afiliado.prestaciones.all
@@ -12,7 +12,10 @@ class PrestacionesController < ApplicationController
 
   def new
     @prestacion = Prestacion.new
-    respond_with(@prestacion)
+    respond_to do |format|
+      format.html 
+      format.json { render json: @proveedor }
+    end    
   end
 
   def edit
@@ -36,11 +39,7 @@ class PrestacionesController < ApplicationController
 
   private
   def set_prestacion
-      @prestacion = Prestacion.find(params[:id])
+    @proveedor = Proveedor.find(params[:proveedor_id])
+    @prestacion = Prestacion.find(params[:id]) if params[:id]
   end
-  
-  def set_afiliado
-    @afiliado = Afiliado.find(params[:afiliado_id])
-  end
-    
 end

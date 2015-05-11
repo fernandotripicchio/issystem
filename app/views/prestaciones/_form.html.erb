@@ -1,10 +1,4 @@
-<%= simple_form_for(@prestacion) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+<%= f.input :razon_social %>
+<%= f.input :cuit %>
+<%= f.input :direccion %>
+<%= f.input :observaciones %>
