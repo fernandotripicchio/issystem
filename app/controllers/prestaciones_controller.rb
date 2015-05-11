@@ -1,9 +1,12 @@
 class PrestacionesController < ApplicationController
-  before_filter :set_prestacion, only: [:show, :edit, :update, :destroy, :create]
+  before_filter :set_prestacion, only: [:new, :show, :edit, :update, :destroy, :create, :index]
 
   def index
-    @prestaciones = @afiliado.prestaciones.all
-    respond_with(@prestaciones)
+    @prestaciones = @proveedor.prestaciones.all
+    respond_to do |format|
+      format.html 
+      format.json { render json: @prestaciones }
+    end 
   end
 
   def show
@@ -23,8 +26,17 @@ class PrestacionesController < ApplicationController
 
   def create
     @prestacion = Prestacion.new(params[:prestacion])
-    @prestacion.save
-    respond_with(@prestacion)
+    if @prestacion.save
+      flash[:notice] = 'Los datos se guardaron con exito'
+      respond_to do|format|
+        format.html { redirect_to proveedores_path }
+      end
+    else
+      flash[:error] = 'Hubo un problema al momento de guardar los datos'
+      respond_to do|format|
+        format.html { render :new }
+      end
+    end  
   end
 
   def update

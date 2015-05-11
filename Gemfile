@@ -21,6 +21,7 @@ gem "test-unit"
 
 group :development do
   gem 'sextant'
+  gem "better_errors"
 end
 
 group :assets do

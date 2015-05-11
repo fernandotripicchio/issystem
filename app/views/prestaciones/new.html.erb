@@ -1,13 +1,11 @@
 <h3 class="subheader">Nueva Prestacion</h3>
 <hr />
 <%= simple_form_for @prestacion, :url => proveedor_prestaciones_path(@proveedor) do |f| %>
-<%= render :partial =>'form', :locals => { :f => f } %>
-<div class="row">
-	<div class="text-center">
-      <%= f.button :submit, :value => "Crear", :class => "small button" %>		
-      <%= link_to 'Cancelar', proveedor_path, :class => "small button" %>
+	<%= render :partial =>'form', :locals => { :f => f } %>
+	<div class="row">
+		<div class="text-center">
+	      <%= f.button :submit, :value => "Crear", :class => "small button" %>		
+	      <%= link_to 'Cancelar', "#", :class => "small button" %>
+		</div>
 	</div>
-</div>
-
-
 <% end %>

@@ -1,4 +1,10 @@
-<%= f.input :razon_social %>
-<%= f.input :cuit %>
-<%= f.input :direccion %>
+<%= f.input :proveedor_id, :as => :hidden,  :input_html => { :value => @proveedor.id }%>
+<%= f.input :user_id, :as => :hidden,  :input_html => { :value => current_user.id }%>
+<%= f.input :nro_factura, :required => true %>
+<%= f.input :monto_factura, :required => true %>
+<%= f.input :fecha_factura, :required => true %>
+<%= f.input :periodo_anio, :required => true %>
+<%= f.input :periodo_mes, :required => true %>
+<%= f.association :tipo_prestacion, collection: TipoPrestacion.all(order: 'tipo').collect{|x|[x.tipo, x.id]}, prompt: "Seleccione una Prestacion" %>
+<%= f.association :afiliado, collection: Afiliado.all(order: 'apellido_nombre', limit: 10).collect{|x|[x.apellido_nombre, x.id]}, prompt: "Seleccione un Afiliado" %>
 <%= f.input :observaciones %>
