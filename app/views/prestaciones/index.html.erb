@@ -1,25 +1,19 @@
-<h1>Prestaciones </h1>
+<h2>Proveedor <%=@proveedor.razon_social %> - Prestaciones </h2>
+<hr />
+<div class="row">
+  <%= render :partial => "form_busqueda"%>
+</div>
 
-<table>
-  <tr>
-  	<th>Proveedor</th>
-    <th>Tipo Prestacion</th>
-    <th>Factura</th>
-    <th>Monto</th>
-  </tr>
+<div class="row text-left">
+  <%= page_entries_info @prestaciones %>
+</div>
 
-<% @prestaciones.each do |prestacion| %>
-  <tr>
-  	<td><%= prestacion.proveedor.razon_social %></td>
-  	<td><%= prestacion.tipo_prestacion.tipo %></td>
-  	<td></td>
-    <td><%= link_to 'Show', prestacion %></td>
-    <td><%= link_to 'Edit', edit_prestacion_path(prestacion) %></td>
-    <td><%= link_to 'Destroy', prestacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div class="row" id="prestacionesList">
+  <%= render :partial => "index", :locals => { :prestaciones => @prestaciones }%>
+</div>
 
-<br />
+<div class="row">
+  <%= paginate @prestaciones %>
+</div>
 
-<%= link_to 'New Prestacion', new_prestacion_path %>
+

@@ -1,18 +1,27 @@
 <table class="large-12" role="grid">
-	<thead>
-		  <tr>
-		  	<th>ID            </th>
-		  	<th>Estado            </th>
-		  	<th>Prestacion        </th>
-		  </tr>
-    </thead>
-    <tbody>
-    <% prestaciones.each do |prestacion| %>
-		  <tr>
-		  	<td><%= prestacion.id %> </td>
-		  	<td><%= prestacion.estado %>   </td>
-		  	<td><%= prestacion.estado %>   </td>
-		  </tr>
-    <% end %>
-   </tbody>
+  <thead>
+    <tr>
+  	  <th>Proveedor</th>
+      <th>Tipo Prestacion</th>
+      <th>Nro Factura</th>
+      <th>Fecha Factura</th>
+      <th>Monto</th>
+      <th>&nbsp;</th>
+    </tr>
+   </thead>
+
+<% @prestaciones.each do |prestacion| %>
+  <tr>
+  	<td><%= prestacion.proveedor.razon_social %></td>
+  	<td><%= prestacion.tipo_prestacion.tipo %></td>
+  	<td><%= prestacion.nro_factura %></td>
+  	<td><%= prestacion.fecha_factura %></td>
+  	<td><%= prestacion.monto_factura %></td>
+    <td>
+      <%= link_to 'Ver', proveedor_prestacion_path(@proveedor, prestacion), :class => "tiny button"%>
+      <%= link_to 'Editar', edit_proveedor_prestacion_path(@proveedor,prestacion), :class => "tiny button" %>
+      <%= link_to 'Eliminar', "#", method: :delete, data: { confirm: 'Esta seguro?' } , :class => "tiny button alert"%>
+    </td>
+  </tr>
+<% end %>
 </table>

@@ -1,6 +1,11 @@
-<h1>Editing prestacion</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @prestacion %> |
-<%= link_to 'Back', prestaciones_path %>
+<h3 class="subheader">Editar Prestacion</h3>
+<hr />
+<%= simple_form_for @prestacion, :url => edit_proveedor_prestacion_path(@proveedor, @prestacion) do |f| %>
+	<%= render :partial =>'form', :locals => { :f => f } %>
+	<div class="row">
+		<div class="text-center">
+	      <%= f.button :submit, :value => "Guardar", :class => "small success button" %>
+	      <%= link_to 'Cancelar', "#", :class => "small button" %>
+		</div>
+	</div>
+<% end %>

@@ -1,10 +1,100 @@
 <%= f.input :proveedor_id, :as => :hidden,  :input_html => { :value => @proveedor.id }%>
 <%= f.input :user_id, :as => :hidden,  :input_html => { :value => current_user.id }%>
-<%= f.input :nro_factura, :required => true %>
-<%= f.input :monto_factura, :required => true %>
-<%= f.input :fecha_factura, :required => true %>
-<%= f.input :periodo_anio, :required => true %>
-<%= f.input :periodo_mes, :required => true %>
-<%= f.association :tipo_prestacion, collection: TipoPrestacion.all(order: 'tipo').collect{|x|[x.tipo, x.id]}, prompt: "Seleccione una Prestacion" %>
-<%= f.association :afiliado, collection: Afiliado.all(order: 'apellido_nombre', limit: 10).collect{|x|[x.apellido_nombre, x.id]}, prompt: "Seleccione un Afiliado" %>
-<%= f.input :observaciones %>
+
+<div class="row">
+  <div class="small-12 columns">
+    <div class="row">
+      <div class="small-3 columns">
+        <%= f.label "Nro de Factura*:", :class => "right inline", :for => "prestacion_nro_factura"%>
+      </div>
+      <div class="small-2 columns left">
+        <%= f.input :nro_factura, :label => false,:required => true, :input_html => {:class => "small-2", :placeholder => "nro de factura"} %>          
+      </div>
+      
+      <div class="small-3 columns">
+        <%= f.label "Fecha Factura*:", :class => "right inline", :for => "prestacion_fecha_factura"%>
+      </div>
+      <div class="small-3 columns left">
+        <%= f.input :fecha_factura,:as => :string, :label => false,:required => true, :input_html =>{ :placeholder => "fecha factura", :class => "small-2 fdatepicker", "data-date-format" => "dd/mm/yyyy" }%>          
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <div class="row">
+    	
+      <div class="small-3 columns">
+        <%= f.label "Monto Factura*:", :class => "right inline", :for => "prestacion_monto_factura"%>
+      </div>
+      <div class="small-2 columns left">
+        <%= f.input :monto_factura, :as =>:string, :label => false,:required => true, :input_html => {:class => "small-2", :placeholder => "monto factura"} %>          
+      </div>    	
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <div class="row">
+      <div class="small-3 columns">
+        <%= f.label "Periodo Año*:", :class => "right inline", :for => "prestacion_periodo_anio"%>
+      </div>
+      <div class="small-2 columns left">
+         <%= f.select :periodo_anio, Prestacion::ANIOS, :include_blank => true %>          
+      </div>
+      
+      <div class="small-3 columns">
+        <%= f.label "Periodo Mes*:", :class => "right inline", :for => "prestacion_periodo_mes"%>
+      </div>
+      <div class="small-2 columns left">
+         <%= f.select :periodo_mes, Prestacion::MESES, :include_blank => true %>
+      </div> 	          	
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <div class="row">
+      <div class="small-3 columns">
+        <%= f.label "Tipo Prestacion*:", :class => "right inline", :for => "prestacion_tipo_prestacion"%>
+      </div>
+      <div class="small-5 columns left">
+           <%= f.association :tipo_prestacion, :label=> false, collection: TipoPrestacion.all(order: 'tipo').collect{|x|[x.tipo, x.id]}, prompt: "Seleccione una Prestacion" %>          
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <div class="row">
+      <div class="small-3 columns">
+        <%= f.label "Afiliado*:", :class => "right inline", :for => "prestacion_afiliado_id"%>
+      </div>
+      <div class="small-5 columns left">
+        <%= f.association :afiliado, :label => false, collection: Afiliado.all(order: 'apellido_nombre', limit: 10).collect{|x|[x.apellido_nombre, x.id]}, prompt: "Seleccione un Afiliado", :required => true %>          
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="small-12 columns">
+    <div class="row">
+      <div class="small-3 columns">
+        <%= f.label "Observaciones:", :class => "right inline", :for => "prestacion_afiliado_id"%>
+      </div>
+      <div class="small-8 medium-4  columns left">
+        <%= f.input :observaciones, :label => false %>          
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

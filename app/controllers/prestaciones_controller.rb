@@ -2,11 +2,11 @@ class PrestacionesController < ApplicationController
   before_filter :set_prestacion, only: [:new, :show, :edit, :update, :destroy, :create, :index]
 
   def index
-    @prestaciones = @proveedor.prestaciones.all
+    @prestaciones = @proveedor.prestaciones.page(params[:page]).per(15)
     respond_to do |format|
-      format.html 
+      format.html
       format.json { render json: @prestaciones }
-    end 
+    end
   end
 
   def show
@@ -16,9 +16,9 @@ class PrestacionesController < ApplicationController
   def new
     @prestacion = Prestacion.new
     respond_to do |format|
-      format.html 
+      format.html
       format.json { render json: @proveedor }
-    end    
+    end
   end
 
   def edit
@@ -36,7 +36,7 @@ class PrestacionesController < ApplicationController
       respond_to do|format|
         format.html { render :new }
       end
-    end  
+    end
   end
 
   def update
