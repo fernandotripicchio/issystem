@@ -1,0 +1,28 @@
+<table class="large-12" role="grid">
+	<thead>
+		  <tr>
+		  	<th>Estado            </th>
+		  	<th>Número Afiliado   </th>
+		  	<th>Apellido y Nombre </th>
+		  	<th>Tipo	          </th>
+		  	<th>Documento	      </th>
+    	    <th>&nbsp;            </th>
+		  </tr>
+    </thead>
+    <tbody>
+     <% unless @afiliado.blank? %>
+		  <tr>
+		  	<td><%= estado_afiliado( @afiliado ) %></td>
+		  	<td><%= @afiliado.numero_afiliado  %>   </td>
+		  	<td><%= @afiliado.apellido_nombre  %>   </td>
+		  	<td><%= @afiliado.tipo_documento   %>   </td>
+		  	<td><%= @afiliado.numero_documento %>   </td>
+		  </tr>
+	<% else %>
+		  <tr>
+		  	<td colspan="5">No hay resultados</td>
+		  </tr>
+
+	<% end %>
+   </tbody>
+</table>

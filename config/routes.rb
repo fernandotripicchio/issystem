@@ -29,7 +29,7 @@ Farmacia::Application.routes.draw do
   match 'save_importar' => 'importar_afiliados#save_importar', :as => :save_importar
 
   #Consultar afiliados
-  match 'formulario_consultas' => 'consultas#new', :as => :formulario_consultas
+  match 'mostrar_resultados' => 'consultas#formulario_consulta', :as => :formulario_consultas
   match 'consultar' => 'consultas#consultar', :as => :consulta_afiliado
   match 'mostrar_resultados' => 'consultas#listado', :as => :listado_afiliado
   match 'mostrar_resultados' => 'consultas#listado', :as => :listado_afiliado

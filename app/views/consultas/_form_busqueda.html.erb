@@ -1,10 +1,10 @@
-<%= simple_form_for :search,  url: search_afiliados_path , :method => :get do |f| %>
+<%= simple_form_for :search,  url: formulario_consultas_path , :method => :get do |f| %>
 <div class="row">
 	<div class="column large-4">
-    <%= f.input :keyword, 
+    <%= f.input :keyword,
                 :as => :search,
                 :placeholder => "Buscar",
-                :required => false, 
+                :required => false,
                 :div => false,
                 :wrapper => false,
                 :input_html => {:value => @keyword},
@@ -12,8 +12,8 @@
                 :autofocus => true %>
 	</div>
 	<div class="column large-8">
-	<%= f.submit "Buscar", :class => "tiny button left" %>	
+	<%= f.submit "Buscar", :class => "tiny button left" %>
 	</div>
 </div>
- 	
+
 <% end %>
