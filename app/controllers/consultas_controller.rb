@@ -16,7 +16,7 @@ class ConsultasController < ApplicationController
 
   end
 
-  def resultados
+  def resultado
 
   end
 end

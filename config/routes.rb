@@ -31,6 +31,6 @@ Farmacia::Application.routes.draw do
   #Consultar afiliados
   match 'mostrar_resultados' => 'consultas#formulario_consulta', :as => :formulario_consultas
   match 'consultar' => 'consultas#consultar', :as => :consulta_afiliado
-  match 'mostrar_resultados' => 'consultas#listado', :as => :listado_afiliado
+  match 'resultados' => 'consultas#resultado', :as => :resultado_afiliado
   match 'mostrar_resultados' => 'consultas#listado', :as => :listado_afiliado
 end

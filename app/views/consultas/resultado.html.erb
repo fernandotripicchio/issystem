@@ -1,0 +1,13 @@
+<% if @afiliado.blank? %>
+	<div class="panel clearfix text-center">
+	  <h5>No se encontró ningun afiliado  </h5>
+	  <p>
+	  	<a href="<%=consulta_afiliado_path%>" class="button alert small">Nueva Consulta</a>
+	  </p>
+	</div>
+<% else %>
+  <h3 class="subheader">Resultados de su búsqueda</h3>
+  <div class="row" id="afiliadosList">
+    <%= render :partial => "resultados"%>
+   </div>
+<% end %>

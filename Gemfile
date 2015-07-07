@@ -22,6 +22,7 @@ gem "test-unit"
 group :development do
   gem 'sextant'
   gem "better_errors"
+  gem 'quiet_assets'
 end
 
 group :assets do
@@ -29,5 +30,5 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'compass-rails'
-  gem 'zurb-foundation'  
+  gem 'zurb-foundation'
 end
