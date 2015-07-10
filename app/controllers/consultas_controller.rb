@@ -8,7 +8,7 @@ class ConsultasController < ApplicationController
   def formulario_consulta
     @keyword = params[:search][:keyword]
     @afiliado = Afiliado.where(numero_documento: @keyword).first
-    render :action => "consultar"
+    render :action => "resultado"
 
   end
 
