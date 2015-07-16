@@ -1,0 +1,5 @@
+<h1>Importar Bajas Afiliados</h2>
+<%= form_tag save_importar_bajas_path, multipart: true do %>
+  <%= file_field_tag :excel_file %>
+  <%= submit_tag "Importar" %>
+<% end %>
