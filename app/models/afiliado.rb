@@ -17,8 +17,7 @@ class Afiliado < ActiveRecord::Base
   #import users from Excel file
   def self.open_spreadsheet(file)
       case File.extname(file.original_filename)
-          when '.xls' then  Roo::Excel.new(file.path, nil, :ignore)
-          #when '.xlsx' then Roo::Excelx.new(file.path, nil, :ignore)
+          when '.xls' then Roo::Spreadsheet.open(file.path, extension: :xls)
           when '.xlsx' then Roo::Spreadsheet.open(file.path, extension: :xlsx)
           else raise "Unknown file type: #{file.original_filename}"
       end
@@ -94,7 +93,6 @@ class Afiliado < ActiveRecord::Base
 
       (2..spreadsheet.last_row).each do |i|
             row   = spreadsheet.row(i)
-
             afiliado_row = Hash.new
             afiliado_row[:clave_excaja]      = row[0].to_i
             afiliado_row[:clave_tipo]        = row[1].to_i
