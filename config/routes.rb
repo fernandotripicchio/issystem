@@ -1,5 +1,7 @@
 Farmacia::Application.routes.draw do
-  devise_for :users
+  
+  devise_for :users, :controllers => {:registrations => "users/registrations"}
+  resources :users
   resources :afiliados do
     collection do
       get 'importar'

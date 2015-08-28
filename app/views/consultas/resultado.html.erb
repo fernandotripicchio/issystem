@@ -1,5 +1,5 @@
 <% if @afiliado.blank? %>
-   <h5>No se encontró ningun beneficiario  </h5>
+   <h5>La búsqueda por número de documento: <%= @keyword%> no produjo resultados. </h5>
   <%= render :partial => "nueva_consulta" %>
 <% else %>
   <h3 class="subheader">Resultado</h3>

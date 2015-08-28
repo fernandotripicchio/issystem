@@ -5,5 +5,10 @@
     </li>
   </ul>
   <section class="top-bar-section">
+    <ul class="right">
+      <li><%= link_to(current_user.email, edit_user_registration_path) %></li>
+      <li class="divider"></li>
+      <li><%= link_to('Salir', destroy_user_session_path, :method => :delete) %></li>
+    </ul>
   </section>
 </nav>

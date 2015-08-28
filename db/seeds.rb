@@ -28,6 +28,11 @@ if User.all.count <= 0
   u = User.create({email: 'marian_pedernera@hotmail.com', password: 'marian2015', password_confirmation: 'marian2015'})
   u = User.create({email: 'andrescdb@hotmail.com', password: 'andres2015', password_confirmation: 'andres2015'})
   u = User.create({email: 'elevarce@gmail.com', password: 'laura2015', password_confirmation: 'laura2015'})    
-  
+end
+if Role.all.count <= 0
+  %w(consulta corriente admin).each do |role|
+    #Role.find_or_create_by({name: role})
+    Role.create(name: role)
+  end
 end
  

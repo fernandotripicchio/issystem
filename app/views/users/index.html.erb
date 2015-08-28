@@ -1,0 +1,15 @@
+<h3 class="subheader">Usuarios</h3>
+<hr />
+
+
+<div class="row text-left">
+  <%= page_entries_info @usuarios %>	
+</div>
+
+<div class="row" id="afiliadosList">
+  <%= render :partial => "index", :locals => { usuarios: @usuarios }%>
+</div>
+
+<div class="row">
+  <%= paginate @usuarios %>
+</div>

@@ -9,7 +9,6 @@ gem 'sqlite3'
 
 gem 'simple_form'
 gem 'devise'
-gem 'devise_invitable'
 gem 'date_validator'
 gem 'roo'
 gem 'roo-xls'
@@ -24,6 +23,8 @@ group :development do
   gem 'sextant'
   gem "better_errors"
   gem 'quiet_assets'
+  gem 'capistrano', '~> 3.1.0'
+  gem 'guard-rails', require: false  
 end
 
 group :assets do
